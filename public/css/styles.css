@@ -1,0 +1,64 @@
+body{
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 60vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    color: #666;
+    border-top: 2px solid #eee;
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+header ul {
+    padding-left: 0;
+}
+
+header li {
+    display: inline-block;
+}
+
+header a {
+    text-decoration: none;
+    color: #888;
+    margin-right: 1rem;
+}
+
+header {
+    margin: 1rem 0 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+img.portrait {
+    width: auto;
+}
+
+input {
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 1px solid #888888;
+    background-color: #888888;
+    color: #ffffff;
+    border-radius: 4px;
+}
