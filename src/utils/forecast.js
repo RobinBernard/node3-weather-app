@@ -11,17 +11,17 @@ const forecast = (latitude, longitude, callback) => {
     request({
         url: weatherURL,
         json: true
-    }, (error, response) =>{
+    }, (error, response) => {
         if (error) {
             callback('Unable to connect to weather services!', null);
         } else if (response.body.error) {
             callback('Unable to find weather details', null);
         } else {
             const data = response.body;
-            const { temperature, feelslike } = data.current;
+            const { temperature, feelslike, humidity, weather_descriptions } = data.current;
             fs.writeFileSync('weather.json', JSON.stringify(response));
             fs.writeFileSync('weatherData.json', JSON.stringify(data.current));
-            callback(null, `It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out.`);
+            callback(null, `${weather_descriptions[0]}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out. Humidity is ${humidity}%`);
         }
     });
 };
